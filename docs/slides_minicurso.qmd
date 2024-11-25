@@ -1,0 +1,22 @@
+---
+title: "Minicurso: Data-Apps Profissionais com Shiny"
+subtitle: "Use R/Shiny no meio corporativo"
+title-slide-attributes:
+  data-background-opacity: ".2"
+author: "Wlademir Prates, PhD"
+format:
+  revealjs: 
+    theme: night
+    incremental: true
+    self-contained: true
+    transition: slide
+from: markdown+emoji
+---
+
+## 1. Passo a passo
+
+- [ ] Introdução ao R/Shiny
+- [ ] Minha experiência com Data Science e R/Shiny
+- [ ] Construindo um Shiny App Profissional
+- [ ] Publicando o App no Shinyapps.io
+

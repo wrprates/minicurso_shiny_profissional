@@ -1,0 +1,15 @@
+# Arquivos e diretórios do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos do R e RStudio
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Dados que não devem ir para o repositório
+*.csv
+*.tsv
+*.rds
+/data/*
