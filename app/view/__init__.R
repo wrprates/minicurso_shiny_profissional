@@ -26,6 +26,7 @@ box::use(
 
 box::use(
   app / view / risk_plot,
+  app / view / usage_plot,
 )
 
 #' @export
@@ -104,7 +105,7 @@ ui <- function(id) {
         ),
         card(
           card_body(
-            # plotOutput(ns("usage_plot")),
+            usage_plot$ui(ns("usage_plot")),
             title = "Relação Entre Taxa de Utilização e Atraso"
           )
         )
@@ -155,6 +156,7 @@ server <- function(id, dados, dados_filtrados) {
     })
 
     risk_plot$server("risk_plot", dados_filtrados)
+    usage_plot$server("usage_plot", dados_filtrados)
   })
 }
 
