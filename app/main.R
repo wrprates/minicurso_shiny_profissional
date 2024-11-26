@@ -1,9 +1,11 @@
 box::use(
+  readr[read_csv],
   shiny[
     div,
     moduleServer, 
     NS,
-    tags
+    reactiveVal,
+    tags,
   ]
 )
 
@@ -21,6 +23,10 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    view$server("view")
+    dados <- read_csv("data/train.csv")
+
+    dados_filtrados <- reactiveVal(NULL)
+
+    view$server("view", dados, dados_filtrados)
   })
 }
