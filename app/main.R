@@ -1,25 +1,26 @@
 box::use(
-  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],
+  shiny[
+    div,
+    moduleServer, 
+    NS,
+    tags
+  ]
+)
+
+box::use(
+  app / view 
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  bootstrapPage(
-    uiOutput(ns("message"))
-  )
+  
+  view$ui(ns("view"))
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    output$message <- renderUI({
-      div(
-        style = "display: flex; justify-content: center; align-items: center; height: 100vh;",
-        tags$h1(
-          tags$a("Check out Rhino docs!", href = "https://appsilon.github.io/rhino/")
-        )
-      )
-    })
+    view$server("view")
   })
 }
